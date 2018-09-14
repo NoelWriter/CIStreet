@@ -11,7 +11,7 @@ public class BuildPlayerExample : MonoBehaviour
     {
         BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
         buildPlayerOptions.scenes = new[] { "Assets/SampleScene.unity" };
-        buildPlayerOptions.locationPathName = "/Build";
+        buildPlayerOptions.locationPathName = "/Built";
         buildPlayerOptions.target = BuildTarget.StandaloneWindows;
         buildPlayerOptions.options = BuildOptions.None;
 

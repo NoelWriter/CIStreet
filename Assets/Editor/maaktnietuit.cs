@@ -1,31 +1,12 @@
 using UnityEditor;
-using UnityEngine;
-using UnityEditor.Build.Reporting;
+class WebGLBuilder {
+    static void build() {
 
-// Output the build size or a failure depending on BuildPlayer.
+        // Place all your scenes here
+        string[] scenes = {"Assets/scenes/SampleScene.unity"};
 
-public class BuildPlayerExample : MonoBehaviour
-{
-    [MenuItem("Build/Build iOS")]
-    public static void MyBuild()
-    {
-        BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
-        buildPlayerOptions.scenes = new[] { "Assets/SampleScene.unity" };
-        buildPlayerOptions.locationPathName = "/Built";
-        buildPlayerOptions.target = BuildTarget.StandaloneWindows;
-        buildPlayerOptions.options = BuildOptions.None;
+        string pathToDeploy = "builds/WebGLversion/";       
 
-        BuildReport report = BuildPipeline.BuildPlayer(buildPlayerOptions);
-        BuildSummary summary = report.summary;
-
-        if (summary.result == BuildResult.Succeeded)
-        {
-            Debug.Log("Build succeeded: " + summary.totalSize + " bytes");
-        }
-
-        if (summary.result == BuildResult.Failed)
-        {
-            Debug.Log("Build failed");
-        }
+        BuildPipeline.BuildPlayer(scenes, pathToDeploy, BuildTarget.WebGL, BuildOptions.None);      
     }
 }

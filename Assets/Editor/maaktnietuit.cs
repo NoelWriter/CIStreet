@@ -5,7 +5,7 @@ class WebGLBuilder {
         // Place all your scenes here
         string[] scenes = {"Assets/scenes/SampleScene.unity"};
 
-        string pathToDeploy = "builds/WebGLversion/";       
+        string pathToDeploy = "Built";       
 
         BuildPipeline.BuildPlayer(scenes, pathToDeploy, BuildTarget.WebGL, BuildOptions.None);      
     }

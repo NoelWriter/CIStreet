@@ -7,6 +7,6 @@ class WebGLBuilder {
 
         string pathToDeploy = "Built";       
 
-        BuildPipeline.BuildPlayer(scenes, pathToDeploy, BuildTarget.WebGL, BuildOptions.None);      
+        BuildPipeline.BuildPlayer(scenes, pathToDeploy, BuildTarget.StandaloneWindows, BuildOptions.None);      
     }
 }
